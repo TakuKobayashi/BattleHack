@@ -32,7 +32,7 @@ module.exports = {
                 MstDrawingTheme.findOne({id: room.mstDrawingThemeId}).exec(function(err, theme){
                   room.drawNumber = room.drawNumber - 1;
                   romm.save(function(err){ console.log(err); });
-                  RoomUser.create({userId: user.id, roomId: room.id, drawingCount: theme.repeatNumber - room.drawNumber}).exec(function(err, roomUser){
+                  RoomUser.create({userId: user.id, roomId: room.id, drawingCount: theme.repeatNumber - room.drawNumber, answerFlag: room.drawNumber % 2 == 0}).exec(function(err, roomUser){
                     res.json(roomUser);
                   });
                 });
