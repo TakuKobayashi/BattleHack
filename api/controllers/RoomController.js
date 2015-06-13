@@ -7,7 +7,7 @@
 
 module.exports = {
   join: function (req, res) {
-    User.findOne({authToken: req.param('authToken')}).exec(function(err, user){
+    var createNewRoom = function(user){
       MstDrawingTheme.count().exec(function(err, c){
         var mstThemeId = Math.ceil(Math.random() * c);
         MstDrawingTheme.findOne({id: mstThemeId}).exec(function(err, theme){
@@ -18,7 +18,33 @@ module.exports = {
           });
         });
       });
+    };
+
+    User.findOne({authToken: req.param('authToken')}).exec(function(err, user){
+      Room.findOne({finishFlag: false}).exec(function(err, room){
+        //まだ終わっていなくて、最後に答える人がいないRoomがあればそこに入れる
+        if(room){
+          RoomUser.findOne({roomId: room.id, answeredFlag: false, userId: user.id}).exec(function(err, ru){
+            if(ru){
+              res.json(ru);
+            } else {
+              if(room.drawNumber > 0){
+                MstDrawingTheme.findOne({id: room.mstDrawingThemeId}).exec(function(err, theme){
+                  room.drawNumber = room.drawNumber - 1;
+                  romm.save(function(err){ console.log(err); });
+                  RoomUser.create({userId: user.id, roomId: room.id, drawingCount: theme.repeatNumber - room.drawNumber}).exec(function(err, roomUser){
+                    res.json(roomUser);
+                  });
+                });
+              } else {
+                createNewRoom(user);
+              }
+            }
+          });
+        } else {
+          createNewRoom(user);
+        }
+      });
     });
   }
-};
-
+}

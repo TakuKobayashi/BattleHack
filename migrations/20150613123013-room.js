@@ -4,9 +4,10 @@ var type = dbm.dataType;
 exports.up = function(db, callback) {
   db.createTable('room', {
     id: { type: 'int', primaryKey: true, autoIncrement: true },
+    name: 'string',
     drawNumber: { type: 'int', notNull: true, defaultValue: 0},
     mstDrawingThemeId: { type: 'int', notNull: true},
-    name: 'string',
+    finishFlag: { type: 'boolean', notNull: true, defaultValue: false},
     updatedAt: 'datetime',
     createdAt: 'datetime'
   },function(){

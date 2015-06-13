@@ -9,6 +9,7 @@ module.exports = {
   attributes: {
     name: 'string',
     drawNumber: 'integer',
+    finishFlag: 'boolean',
     theme:{
       model: 'MstDrawingTheme',
       columnName: 'mstDrawingThemeId'
