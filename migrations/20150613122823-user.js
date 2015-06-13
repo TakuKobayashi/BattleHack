@@ -5,6 +5,7 @@ exports.up = function(db, callback) {
   db.createTable('user', {
     id: { type: 'int', primaryKey: true, autoIncrement: true },
     name: 'string',
+    authToken: { type: 'string', notNull: true },
     updatedAt: 'datetime',
     createdAt: 'datetime'
   }, function(){
