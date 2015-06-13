@@ -25,7 +25,8 @@
     "paypal-rest-sdk":"*",
     "sails-hook-autoreload":"*",
     "sails-db-migrate": "*",
-    "sails-mysql": "*"
+    "sails-mysql": "*",
+    "node-uuid": "*"
   },
   "scripts": {
     "debug": "node debug app.js",
