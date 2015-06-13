@@ -10,6 +10,8 @@ exports.up = function(db, callback) {
     token: { type: 'string', notNull: true },
     tokenSecret: { type: 'string' },
     expiredAt: { type: 'datetime' },
+    updatedAt: 'datetime',
+    createdAt: 'datetime'
   }, function(){
     db.addIndex('oauthTokenSetting', 'oauth_token_setting_user_id_index', 'userId', function(){
       db.addIndex('oauthTokenSetting', 'oauth_token', 'type', callback)

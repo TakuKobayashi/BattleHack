@@ -10,6 +10,7 @@ exports.up = function(db, callback) {
     answerFlag: { type: 'boolean', notNull: true, defaultValue: false},
     answerWord: 'string',
     drawingImagePath: 'string',
+    answeredFlag: { type: 'boolean', notNull: true, defaultValue: false},
     updatedAt: 'datetime',
     createdAt: 'datetime'
   }, function(){

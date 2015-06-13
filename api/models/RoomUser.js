@@ -19,6 +19,7 @@ module.exports = {
     answerFlag: 'boolean',
     answerWord: 'string',
     drawingImagePath: 'string',
-  }
+    answeredFlag: 'boolean',
+  },
 };
 

@@ -5,7 +5,7 @@ exports.up = function(db, callback) {
   db.createTable('mstDrawingTheme', {
     id: { type: 'int', primaryKey: true, autoIncrement: true },
     title: { type: 'string'},
-    repeatNumber: { type: 'integer', notNull: true, defaultValue: 4 }
+    repeatNumber: { type: 'integer', notNull: true, defaultValue: 4 },
   }, callback);
 };
 
