@@ -8,7 +8,7 @@
 module.exports = {
   join: function (req, res) {
     var responseJson = function(res, roomUser, theme){
-      RoomUser.findOne({roomId: roomUser.room, userId: roomUser.user}).exec(function(err, prev){
+      RoomUser.findOne({roomId: roomUser.room, userId: roomUser.user, drawingCount: roomUser.drawingCount - 1}).exec(function(err, prev){
         var p = prev;
         if(!prev) p = {};
         return res.json({
