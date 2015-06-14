@@ -83,12 +83,18 @@ module.exports = {
     });
   },
   sendDraw: function (req, res) {
-    var uploadFile = req.file('uploadFile');
-    console.log(uploadFile);
-    uploadFile.upload(function onUploadComplete (err, files) {				
-      //Files will be uploaded to .tmp/uploads
-      if (err) return res.serverError(err);
-        console.log(files);
+    RoomUser.findOne({id: req.param('roomUserId')}).exec(function(err, roomUser){
+      Room.findOne({id: roomUser.room}).exec(function(err, room){
+        roomUser.answeredFlag = true;
+        roomUser.drawingImage = req.param('drawingImage');
+        roomUser.save(function(err){ console.log(err); });
+        if(room.drawNumber <= 0){
+          room.finishFlag = true;
+          room.save(function(err){ console.log(err); });
+        }
+        res.send();
+        res.status(200);
       });
+    });
   }
 }
