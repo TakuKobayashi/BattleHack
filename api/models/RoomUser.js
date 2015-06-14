@@ -6,6 +6,9 @@
 */
 
 module.exports = {
+  //そのままやると、PosgreのAdapterがバグっていてうまくいかないリネーム
+  tableName: 'roomuser',
+
   attributes: {
     user:{
       model: 'user',

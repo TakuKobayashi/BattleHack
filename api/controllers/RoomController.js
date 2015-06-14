@@ -29,9 +29,6 @@ module.exports = {
       MstDrawingTheme.count().exec(function(err, c){
         var mstThemeId = Math.ceil(Math.random() * c);
         MstDrawingTheme.findOne({id: mstThemeId}).exec(function(err, theme){
-          console.log(mstThemeId);
-          console.log(theme);
-          console.log(c);
           Room.create({mstDrawingThemeId: mstThemeId, drawNumber: theme.repeatNumber}).exec(function(err, room){
             RoomUser.create({userId: user.id, roomId: room.id}).exec(function(err, roomUser){
               responseJson(res, roomUser, theme);

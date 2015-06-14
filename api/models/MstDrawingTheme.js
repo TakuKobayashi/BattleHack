@@ -9,6 +9,9 @@ module.exports = {
   autoCreatedAt: false,
   autoUpdatedAt: false,
 
+  //そのままやると、PosgreのAdapterがバグっていてうまくいかないリネーム
+  tableName: 'mstdrawingtheme',
+
   attributes: {
     title: { type: 'string' },
     repeatNumber: { type: 'integer' }

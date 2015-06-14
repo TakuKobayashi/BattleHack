@@ -81,6 +81,9 @@ module.exports.connections = {
     host: 'ec2-54-197-239-171.compute-1.amazonaws.com',
     user: 'wlsjmrwtogeopb',
     password: 'i72T6YMmPgpwsF1syo3zPP16K3',
+    //host: 'localhost',
+    //user: 'taku',
+    //password: '',
     port: 5432,
     pool: false,
     ssl: true
