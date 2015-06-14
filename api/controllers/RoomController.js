@@ -19,7 +19,7 @@ module.exports = {
           repeatNumber: theme.repeatNumber,
           prev: {
             answerWord: p.answerWord,
-            imagePath: p.imagePath,
+            imagePath: p.drawingImage,
           }
         });
       });

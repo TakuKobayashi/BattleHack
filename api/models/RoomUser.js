@@ -21,7 +21,7 @@ module.exports = {
     drawingCount: 'integer',
     answerFlag: 'boolean',
     answerWord: 'string',
-    drawingImagePath: 'string',
+    drawingImage: 'text',
     answeredFlag: 'boolean',
   },
 };

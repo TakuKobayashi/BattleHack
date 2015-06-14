@@ -9,7 +9,7 @@ exports.up = function(db, callback) {
     drawingCount: { type: 'int', notNull: true, defaultValue: 0},
     answerFlag: { type: 'boolean', notNull: true, defaultValue: false},
     answerWord: 'string',
-    drawingImagePath: 'string',
+    drawingImage: 'text',
     answeredFlag: { type: 'boolean', notNull: true, defaultValue: false},
     updatedAt: 'datetime',
     createdAt: 'datetime'
