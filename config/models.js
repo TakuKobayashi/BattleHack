@@ -28,8 +28,9 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   // migrate: 'alter'
-  connection: 'localDiskDb',
+  //connection: 'localDiskDb',
   //connection: 'someMysqlServer',
+  connection: 'somePostgresqlServer',
   migrate: 'safe',
   schema: true,
   autoPK: true,

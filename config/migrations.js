@@ -1,3 +1,4 @@
 module.exports.migrations = {
-  connection: 'someMysqlServer'
+  connection: 'somePostgresqlServer'
+  //connection: 'someMysqlServer'
 };

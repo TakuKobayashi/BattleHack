@@ -77,10 +77,13 @@ module.exports.connections = {
   ***************************************************************************/
   somePostgresqlServer: {
     adapter: 'sails-postgresql',
-    host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-    user: 'YOUR_POSTGRES_USER',
-    password: 'YOUR_POSTGRES_PASSWORD',
-    database: 'YOUR_POSTGRES_DB'
+    database: 'dea1lsv1ou0gk5',
+    host: 'ec2-54-197-239-171.compute-1.amazonaws.com',
+    user: 'wlsjmrwtogeopb',
+    password: 'i72T6YMmPgpwsF1syo3zPP16K3',
+    port: 5432,
+    pool: false,
+    ssl: true
   }
 
 

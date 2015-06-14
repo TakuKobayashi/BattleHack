@@ -26,7 +26,8 @@
     "sails-hook-autoreload":"*",
     "sails-db-migrate": "*",
     "sails-mysql": "*",
-    "node-uuid": "*"
+    "node-uuid": "*",
+    "sails-postgresql": "*"
   },
   "scripts": {
     "debug": "node debug app.js",
