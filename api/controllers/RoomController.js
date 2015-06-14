@@ -10,7 +10,9 @@ module.exports = {
     var responseJson = function(res, roomUser, theme){
       RoomUser.findOne({roomId: roomUser.room, userId: roomUser.user, drawingCount: roomUser.drawingCount - 1}).exec(function(err, prev){
         var p = prev;
+        console.log(p);
         if(!prev) p = {};
+        console.log(p);
         return res.json({
           id: roomUser.id,
           title: theme.title,
