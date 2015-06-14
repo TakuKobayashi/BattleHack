@@ -27,7 +27,8 @@
     "sails-db-migrate": "*",
     "sails-mysql": "*",
     "node-uuid": "*",
-    "sails-postgresql": "*"
+    "sails-postgresql": "*",
+    "sendgrid": "*"
   },
   "scripts": {
     "debug": "node debug app.js",
